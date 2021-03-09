@@ -2,8 +2,11 @@ import React from "react";
 
 import "./App.css";
 
-class App extends React.Component {
-  constructor(props) {
+interface Props {}
+interface State {}
+
+class App extends React.Component<Props, State> {
+  constructor(props: Propsi9) {
     super(props);
     this.state = {};
   }
