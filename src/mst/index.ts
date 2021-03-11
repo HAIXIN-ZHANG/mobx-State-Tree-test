@@ -22,9 +22,13 @@ const EmployerModel = types
         employees: [{ id, name, hours_worked }, ...self.employees],
       });
     }
-
     return { newEmployee };
-  });
+  })
+  .views((self) => ({
+    get num_employees() {
+      return self.employees.length;
+    }
+  }));
 
 const RootModel = types.model("Root", {
   employer: EmployerModel,

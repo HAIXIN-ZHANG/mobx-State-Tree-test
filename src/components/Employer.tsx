@@ -50,10 +50,12 @@ class EmployerComponent extends React.Component<
     const { employeeName, hours_worked } = this.state;
     if (!rootTree) return null;
 
+    const num_employees = rootTree.employer.num_employees;
     return (
       <div>
         <h1>{rootTree.employer.name}</h1>
         <h3>{rootTree.employer.location}</h3>
+        <p>{`Total Number of Employees: ${num_employees}`}</p>
         <hr />
         <p>New Employee</p>
         <form onSubmit={this.onSubmit}>
