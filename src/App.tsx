@@ -8,7 +8,6 @@ interface Props {}
 interface State {
   rootTree: any;
 }
-
 class App extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);

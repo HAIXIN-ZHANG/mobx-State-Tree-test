@@ -1,9 +1,15 @@
+import { inject, observer } from "mobx-react";
 import * as React from "react";
+import { Root } from "../mst";
 
-interface EmployerComponentProps {}
+interface EmployerComponentProps {
+  rootTree?: Root;
+}
 
 interface EmployerComponentState {}
 
+@inject("rootTree")
+@observer
 class EmployerComponent extends React.Component<
   EmployerComponentProps,
   EmployerComponentState
@@ -13,9 +19,14 @@ class EmployerComponent extends React.Component<
     this.state = {};
   }
   render() {
+    const { rootTree } = this.props;
+    if (!rootTree) return null;
+   
     return (
       <div>
-        <p>hi</p>
+        <h1>{rootTree.employer.name}</h1>
+        <h3>{rootTree.employer.location}</h3>
+        <hr/>
       </div>
     );
   }
