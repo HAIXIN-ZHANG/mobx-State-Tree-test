@@ -1,11 +1,22 @@
 import { applySnapshot, Instance, types } from "mobx-state-tree";
 import * as uuid from "uuid";
 
-const EmployeeModel = types.model("", {
-  id: types.identifier,
-  name: types.string,
-  hours_worked: types.number,
-});
+const EmployeeModel = types
+  .model("EmployeeM", {
+    id: types.identifier,
+    name: types.string,
+    hours_worked: types.number,
+  })
+  .actions((self) => {
+    function editEmployee(name: string, hours_worked: number) {
+      applySnapshot(self, {
+        ...self,
+        name,
+        hours_worked,
+      });
+    }
+    return { editEmployee };
+  });
 
 const EmployerModel = types
   .model("Employer", {
