@@ -69,7 +69,6 @@ class EmployeeComponent extends React.Component<
             />
             <button type="submit"> Submit</button>
             <button type="button" onClick={this.toggleEdit}>
-              {" "}
               Cancel
             </button>
           </form>
