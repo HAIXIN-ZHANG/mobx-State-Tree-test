@@ -9,7 +9,7 @@ import * as uuid from "uuid";
 import api from "axios";
 
 const EmployeeModel = types
-  .model("EmployeeM", {
+  .model("Employee", {
     id: types.identifier,
     name: types.string,
     hours_worked: types.number,

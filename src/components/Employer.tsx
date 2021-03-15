@@ -1,7 +1,7 @@
 import { inject, observer } from "mobx-react";
 import * as React from "react";
 import { Root } from "../mst";
-import { EmployeeComponent } from "./Emopyee";
+import { EmployeeComponent } from "./Employee";
 
 interface EmployerComponentProps {
   rootTree?: Root;
