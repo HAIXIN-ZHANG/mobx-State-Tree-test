@@ -11,6 +11,7 @@ export const setupRootStore = () => {
     },
   });
   onSnapshot(rootTree, (snapshot) => console.log("snapshot:", snapshot));
+  
   //   const currentRootTree = getSnapshot(rootTree);
   //   applySnapshot(rootTree, {
   //     ...currentRootTree,
